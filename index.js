@@ -1,5 +1,5 @@
-import express from "express";
-import connection, { connection } from "./routes/db-config";
+import express from 'express';
+import { connection } from './routes/db-config';
 const app = express();
 const port = 5000;
 
@@ -10,8 +10,7 @@ app.set("views", "./views");
 app.use(express.json);
 
 connection.connect((err) => {
-  if (err) throw err;
-  console.log("database is Connected");
+    if (err) throw err;
+    console.log("database is Connected");
 });
 app.listen(port);
-module.exports = connection;
